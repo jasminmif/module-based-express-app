@@ -7,6 +7,7 @@
 const userUrls = require('../user/urls');
 
 const routes = app => {
+    // app.use('/admin', adminUrls);
     app.use('/user', userUrls);
 };
 

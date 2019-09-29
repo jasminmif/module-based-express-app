@@ -5,8 +5,8 @@
 
 class UserService {
     constructor(userObj) {
-        this.id = userObj.id;
-        this.token = userObj.tokenl;
+        // this.id = userObj.id;
+        // this.token = userObj.tokenl;
     }
 
     static async getById(id) {
@@ -18,4 +18,10 @@ class UserService {
         // get user in mode
         return true;
     }
+
+    list() {
+        return 'All users List';
+    }
 }
+
+module.exports = UserService;

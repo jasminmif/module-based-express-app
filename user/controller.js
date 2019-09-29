@@ -10,7 +10,8 @@ const UserCtrl = {
     },
 
     list: async (req, res) => {
-        res.send('All Users List');
+        const user = new UserService();
+        res.send(user.list());
     }
 };
 
