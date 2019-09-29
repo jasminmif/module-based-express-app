@@ -6,7 +6,7 @@ since code is split into separate modules and is much more maintainable and read
 
 ## Usage
 
-To use this structure, just clone my github repo:
+To use this application structure, just clone my github repo and continue on using the same patterns:
 
 ```
     https://github.com/jasminmif/module-based-express-app
