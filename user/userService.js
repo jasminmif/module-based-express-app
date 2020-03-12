@@ -1,7 +1,7 @@
 // Used for common shared functionality of the User.
 // for example: userService.authentication ...
 
-// const UserModel = require('./model');
+const UserModel = require("./model");
 
 class UserService {
     constructor(userObj) {
@@ -10,8 +10,7 @@ class UserService {
     }
 
     static async getById(id) {
-        // var user = await UserModel.findOne({ _id: id }).exec();
-        return new User({ id: 1, token: '123-456-789' });
+        var user = await UserModel.findOne({ _id: id }).exec();
     }
 
     static async authenticate(tokenString) {
@@ -19,8 +18,35 @@ class UserService {
         return true;
     }
 
-    list() {
-        return 'All users List';
+    static async register(firstName, lastName, username, password) {
+        /*
+            {
+                "username": "jasmin",
+                "firstName": "Jasmin",
+                "lastName": "Miftari",
+                "password": "jasmin"
+            }
+        */
+        let userExists = await UserModel.findOne({ username: username }).exec();
+
+        if (userExists) {
+            throw new Error("This user already exists!");
+        }
+
+        let user = await UserModel.create({
+            firstName,
+            lastName,
+            username,
+            password
+        });
+
+        return user;
+    }
+
+    static async getAllUsers() {
+        let users = await UserModel.find({}, { password: 0 }).exec();
+
+        return users;
     }
 }
 

@@ -1,0 +1,32 @@
+
+
+User                        | Jasmin
+    Project                 | Managapp
+        Members             | mahije, teuta
+
+
+AccessProvider
+    project: managap, platform: github, access_token: 123dxxxAC
+    project: managap, platform: slack, access_token: 123asdjkhasdjh 
+
+
+Platforms
+    name
+    icon
+    callback
+    clientId
+    selcretClientId
+
+
+
+- User gets registered
+- User creates a project
+- Selects the platforms of the project
+- Authorizes the access to the platforms
+- The Project is complete
+
+- He can add new member to all of the platforms
+- Remove member from all of platforms
+
+
+

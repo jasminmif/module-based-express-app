@@ -1,17 +1,30 @@
-const UserService = require('./userService');
+const UserService = require("./userService");
+const response = require("../util/response");
 
 const UserCtrl = {
     login: async (req, res) => {
-        res.send('Login Complete');
+        res.send("Login Complete");
     },
 
     register: async (req, res) => {
-        res.send('Registration Complete');
+        const { firstName, lastName, username, password } = req.body;
+
+        const user = await UserService.register(
+            firstName,
+            lastName,
+            username,
+            password
+        ).catch(err => {
+            response.badRequest(res, err.message);
+        });
+
+        response.success(res, "Successfully created new user");
     },
 
-    list: async (req, res) => {
-        const user = new UserService();
-        res.send(user.list());
+    getAllUsers: async (req, res) => {
+        const userList = await UserService.getAllUsers();
+
+        response.success(res, "", userList);
     }
 };
 

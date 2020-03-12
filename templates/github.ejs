@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Github</title>
+</head>
+<body>
+    List User repo
+
+    <form action="/user/github" method="post">
+        <input type="text" name="email" />
+        <button type="submit">List User Repo</button>
+    </form>
+
+
+    <hr>
+    Add User to Repo
+
+    <form action="/user/add-user-to-repo" method="post">
+        Repo Name: <input type="text" name="repoName" />
+        Username: <input type="text" name="email" />
+        <button type="submit">Add user</button>
+    </form>
+</body>
+</html>

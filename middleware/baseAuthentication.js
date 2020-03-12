@@ -1,12 +1,12 @@
 const BaseAuthentication = {
     authUser: async (req, res, next) => {
-        console.log('Middleware for User Authentication');
-        const authToken = req.header('Authorization') || '';
+        const authToken = req.header("Authorization") || "";
         if (authToken) {
+            req.user = "5e682df6a2cc0f409c5a654d";
             next();
         }
 
-        res.send('Unauthorized');
+        res.send("Unauthorized");
     }
 };
 
